@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-toolbar color="azul">
+    <ion-title class="tittletar" slot="">Targón</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+   <ion-content color="blanco">
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col size="12" size-lg="3" size-md="4" size-sm="6" size-xs="12"
+                  *ngFor ="let noticia of noticias; let i= index">
+            <ion-card  color="blanco" button="true" (click)=onNoticia(noticia) >
+              <ion-card-header>
+                <ion-card-subtitle >
+                    <span class="text">{{i + 1 }}</span>
+                    <span class="noticia-name">{{noticia.source.name}} </span>
+                </ion-card-subtitle>
+                <ion-card-title>{{noticia.title}}</ion-card-title>
+              </ion-card-header>    
+              
+              <ion-img  *ngIf="noticia.urlToImage"
+                        [src]="noticia.urlToImage"></ion-img>   
+              
+              <ion-card-content>
+                <p class="noticia-description">
+                  {{noticia.description}}
+                </p>
+              </ion-card-content>          
+            </ion-card >
+        </ion-col>  
+      </ion-row>
+    </ion-grid>
+</ion-content >
+ 
+<ion-toolbar>
+  <ion-tabs >
+    <ion-tab-bar color="azul" slot="bottom" >
+      <ion-tab-button tab="categorias" routerLink="/categorias">
+        <ion-icon name="list-outline"></ion-icon>
+        <ion-label class="label1">Categorias</ion-label>
+
+      </ion-tab-button>
+
+      <ion-tab-button tab="busqueda" routerLink="/buscar">
+        <ion-icon name="search-circle-outline"></ion-icon>
+        <ion-label class="label1">Buscar</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button tab="inicio" routerLink="/inicio">
+        <ion-icon name="home-outline"></ion-icon>
+        <ion-label class="label1">Inicio</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button tab="guardados" routerLink="/guardados">
+        <ion-icon name="bookmark-outline"></ion-icon>
+        <ion-label class="label1">Favoritos</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button tab="cuenta" routerLink="/cuenta">
+        <ion-icon name="person-circle-outline"></ion-icon>
+        <ion-label class="label1">Cuenta</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-toolbar>

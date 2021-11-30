@@ -1,0 +1,90 @@
+<ion-header>
+  <ion-toolbar color="azul">
+    <ion-title slot="">Administración</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button
+       defaultHref="/"
+       text="volver"
+       color="blanco"
+       mode="ios"
+       class="back1"> 
+      </ion-back-button>
+   </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="celeste">
+
+  <form #form="ngForm" >
+
+
+  <ion-item color="celeste">
+    <ion-label position="floating" class="label3">Nombre</ion-label>
+    <ion-input type="string" placeholder="Nombre" name="nombre" [(ngModel)]= "newUsuario.nom" required></ion-input> 
+  </ion-item>
+
+  <ion-item color="celeste">
+    <ion-label position="floating" class="label3">Apellidos</ion-label>
+    <ion-input type="string" placeholder="Apellidos" name="apellidos" [(ngModel)]= "newUsuario.ape" required></ion-input>
+  </ion-item>
+
+  <ion-item color="celeste">
+        <ion-label position="floating"class="label3">Email </ion-label>
+        <ion-input type="email" placeholder="Email"
+                   name="email" [(ngModel)]= "newUsuario.email"
+                   pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"required>
+        </ion-input>
+      </ion-item>
+      <ion-item color="celeste">
+        <ion-label position="floating"class="label3">Password </ion-label>
+        <ion-input type="password" placeholder="Contraseña" name="password" [(ngModel)]= "newUsuario.pass" required>
+        </ion-input>
+      </ion-item>
+
+  <ion-item color="celeste"> 
+    <ion-label position="floating"class="label3">Zipcode</ion-label>
+    <ion-input type="number" placeholder="zipcode" name="zipcode" [(ngModel)]= "newUsuario.zipcode" required></ion-input>
+  </ion-item>
+  <ion-item color="celeste"> 
+    <ion-label class="label1">¿Desea suscribirse a nuestro newsletter?</ion-label>
+  <ion-checkbox type="boolean" [(ngModel)]="newUsuario.newsletter" name="newsletter"></ion-checkbox>
+  </ion-item>
+
+  <ion-button color="azul"[disabled] ="form.invalid" type="submit" expand="block" 
+  (click)="updateUsuarios(usuario)"
+  >  
+        Actualizar
+      </ion-button>
+      <ion-button color="danger"[disabled] ="form.invalid" type="submit" expand="block" 
+  (click)="deleteUsuarios(usuario)"
+  >  
+        Eliminar
+      </ion-button>
+  </form>
+
+
+  <ion-list #myList>
+    <ion-list-header >
+      <ion-label class="label3">USUARIOS</ion-label>
+    </ion-list-header>
+
+    <ion-list >
+      <ion-item (click)="openEdit(usuario)" *ngFor="let usuario of usuarios">
+        <ion-item>
+          <ion-label text-wrap> 
+            <h3>{{usuario.nom}}</h3>
+            <ion-text >
+              <p>{{usuario.apellido}}</p>
+            </ion-text>
+            <p>{{usuario.modified | date: 'short'}}</p>
+          </ion-label>
+        </ion-item>
+        <ion-item-options side="end">
+          <ion-item-option color="celeste" (click)="updateUsuario(usuario)">Actualizar</ion-item-option>
+         <ion-item-option color="danger" (click)="deleteUsuario(usuario)">Eliminar</ion-item-option> 
+        </ion-item-options>
+      </ion-item>
+    </ion-list>
+  </ion-list>
+
+</ion-content>

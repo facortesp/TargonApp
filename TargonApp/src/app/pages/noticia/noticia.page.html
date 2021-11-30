@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar color="azul">
+    <ion-title color="azul" slot=""></ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button
+       defaultHref="/inicio"
+       text="volver"
+       color="blanco"
+       mode="ios"
+       class="back1"
+       > 
+      </ion-back-button>
+   </ion-buttons>
+		<ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="blanco" class="ion-no-padding" [scrollEvents]="true">
+	<ion-grid class="ion-no-padding">
+		<ion-row >
+			<ion-col
+				size="12"
+			>
+				<ion-card  class="ion-no-margin card1">
+					<ion-card-header  class="ion-no-padding">
+						<ion-img class="detail-img" [src]="article.urlToImage"> </ion-img>
+					</ion-card-header>
+					<ion-card-content class="ion-no-padding">
+						<ion-list class="list1" >
+							<ion-list-header color="blanco"
+								>{{ article.title}}
+								</ion-list-header>
+							<ion-text color="negro" *ngIf="article.content" 
+								>{{ article.content }} <span>
+									Publicado el {{ article.publishedAt | date:'dd/MM/yyyy'}} a las {{article.publishedAt | date:'HH:mm:ss'}}</span
+								>
+							</ion-text>
+						</ion-list>
+					</ion-card-content>
+				</ion-card>
+				<ion-card color="blanco" *ngIf="article.author" class="ion-no-padding ion-no-margin">
+					<ion-card-content >
+						<ion-text color="negro"
+							><span 
+								><ion-icon color="negro" size="large" name="person-circle"></ion-icon>
+								Autor: {{article.author}}</span
+							></ion-text
+						>
+					</ion-card-content>
+				</ion-card>
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+</ion-content>

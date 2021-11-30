@@ -1,0 +1,120 @@
+<ion-header>
+  <ion-toolbar color="azul">
+    <ion-title color="blanco"slot="">Categorías</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button
+       defaultHref="/"
+       text="volver"
+       color="blanco"
+       mode="ios"
+       class="back1"> 
+      </ion-back-button>
+   </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <!-- <ion-list>
+    <ion-item *ngFor="let c of componentes"
+    [routerLink]="c.redirecTo"
+    detail="true">
+    <ion-icon slot="start" [name]="c.name" color="azul"></ion-icon>
+    {{c.name}}
+    </ion-item>
+   </ion-list> -->
+
+   <ion-list class="list1" >
+    <ion-item color="celeste">
+        <ion-label class="labbel1">Mundo</ion-label>
+        <ion-checkbox  slot="end"></ion-checkbox>
+      </ion-item>
+      <ion-item color="celeste">
+        <ion-label class="labbel1">Chile</ion-label>
+        <ion-checkbox slot="end"></ion-checkbox>
+      </ion-item>
+      <ion-item color="celeste">
+        <ion-label class="labbel1">Tecnología</ion-label>
+        <ion-checkbox slot="end"></ion-checkbox>
+      </ion-item>
+      <ion-item color="celeste">
+        <ion-label class="labbel1">Gaming</ion-label>
+        <ion-checkbox slot="end"></ion-checkbox>
+      </ion-item>
+      <ion-item color="celeste">
+        <ion-label class="labbel1">Ciencia</ion-label>
+        <ion-checkbox slot="end"></ion-checkbox>
+      </ion-item>
+      <ion-item color="celeste">
+        <ion-label class="labbel1">Salud y bienestar</ion-label>
+        <ion-checkbox slot="end"></ion-checkbox>
+      </ion-item>
+      <ion-item color="celeste">
+        <ion-label class="labbel1">Deportes</ion-label>
+        <ion-checkbox slot="end"></ion-checkbox>
+      </ion-item>
+      <ion-item color="celeste">
+        <ion-label class="labbel1">Lifestyle</ion-label>
+        <ion-checkbox slot="end"></ion-checkbox>
+      </ion-item>
+      <ion-item color="celeste">
+        <ion-label class="labbel1">Economía</ion-label>
+        <ion-checkbox slot="end"></ion-checkbox>
+      </ion-item>
+      <ion-item color="celeste">
+        <ion-label class="labbel1">Cine</ion-label>
+        <ion-checkbox slot="end"></ion-checkbox>
+      </ion-item>
+      <ion-item color="celeste">
+        <ion-label class="labbel1">Cultura</ion-label>
+        <ion-checkbox slot="end"></ion-checkbox>
+      </ion-item>
+      <ion-item color="celeste">
+        <ion-label class="labbel1">Política</ion-label>
+        <ion-checkbox slot="end"></ion-checkbox>
+      </ion-item>
+      <ion-item color="celeste">
+        <ion-label class="labbel1">Educación</ion-label>
+        <ion-checkbox slot="end"></ion-checkbox>
+      </ion-item>
+      <ion-item color="celeste">
+        <ion-label class="labbel1">RRSS</ion-label>
+        <ion-checkbox slot="end"></ion-checkbox>
+      </ion-item>
+      
+    </ion-list>
+
+   
+   
+  
+</ion-content>
+<ion-toolbar >
+  <ion-tabs >
+    <ion-tab-bar color="azul"slot="bottom" >
+      <ion-tab-button tab="categorias" routerLink="/categorias">
+        <ion-icon name="list-outline"></ion-icon>
+        <ion-label class="label1">Categorias</ion-label>
+
+      </ion-tab-button>
+
+      <ion-tab-button tab="busqueda" routerLink="/buscar">
+        <ion-icon name="search-circle-outline"></ion-icon>
+        <ion-label class="label1">Buscar</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button tab="inicio" routerLink="/inicio">
+        <ion-icon name="home-outline"></ion-icon>
+        <ion-label class="label1">Inicio</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button tab="guardados" routerLink="/guardados">
+        <ion-icon name="bookmark-outline"></ion-icon>
+        <ion-label class="label1">Favoritos</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button tab="cuenta" routerLink="/cuenta">
+        <ion-icon name="person-circle-outline"></ion-icon>
+        <ion-label class="label1">Cuenta</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-toolbar>

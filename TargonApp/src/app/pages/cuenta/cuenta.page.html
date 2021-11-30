@@ -1,0 +1,103 @@
+<ion-header>
+  <ion-toolbar color="azul">
+    <ion-title slot="">Cuenta</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button
+       defaultHref="/"
+       text="volver"
+       color="blanco"
+       mode="ios"
+       class="back1"> 
+      </ion-back-button>
+   </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="celeste">
+
+
+
+
+  <!-- <form #login="ngForm" (ngSubmit) ="onSubmit()">
+
+    
+    
+  
+    <ion-item color="celeste">
+          <ion-label position="floating">Email </ion-label>
+          <ion-input type="email" placeholder="Email"
+                     name="email" [(ngModel)]= "usuario.email"
+                     pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"required>
+          </ion-input>
+        </ion-item>
+        <ion-item  color="celeste">
+          <ion-label position="floating">Password </ion-label>
+          <ion-input type="password" placeholder="Contraseña" name="password" [(ngModel)]= "usuario.password" required>
+          </ion-input>
+        </ion-item>
+        <ion-button  color="azul" [disabled] ="login.invalid" type="submit" expand="block" routerLink="/inicio" (click)="presentAlertConfirm()">
+          Iniciar sesión
+        </ion-button> 
+        
+    </form> -->
+   
+<form #form="ngForm"
+ (ngSumbit)="login(form)"> 
+ <ion-item color="celeste">
+ <ion-label class="label3" position="floating">Email </ion-label>
+  <ion-input type="text" name="email" 
+              ngModel            
+              placeholder=""></ion-input>
+              <ion-label position="floating">Contraseña </ion-label>
+  <ion-input type="password" name="password" 
+              ngModel           
+              placeholder=""></ion-input>
+  </ion-item>
+  <ion-button  color="azul" expand="block" (click)="presentAlertConfirm();login(form)" routerLink="/inicio" type="submit" [disabled]="form.invalid">
+    Iniciar sesión
+  </ion-button>
+</form>
+
+  
+
+<ion-button color="azul" expand="block" routerLink="/crearcuenta">
+  Crear cuenta
+</ion-button>
+
+<ion-button color="azul"  expand="block" routerLink="/datos" >
+  Admin
+</ion-button>
+
+</ion-content>
+
+<ion-toolbar>
+  <ion-tabs >
+    <ion-tab-bar color="azul" slot="bottom" >
+      <ion-tab-button tab="categorias" routerLink="/categorias">
+        <ion-icon name="list-outline"></ion-icon>
+        <ion-label class="label1">Categorias</ion-label>
+
+      </ion-tab-button>
+
+      <ion-tab-button tab="busqueda" routerLink="/buscar">
+        <ion-icon name="search-circle-outline"></ion-icon>
+        <ion-label class="label1">Buscar</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button tab="inicio" routerLink="/inicio">
+        <ion-icon name="home-outline"></ion-icon>
+        <ion-label class="label1">Inicio</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button tab="guardados" routerLink="/guardados">
+        <ion-icon name="bookmark-outline"></ion-icon>
+        <ion-label class="label1">Favoritos</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button tab="cuenta" routerLink="/cuenta">
+        <ion-icon name="person-circle-outline"></ion-icon>
+        <ion-label class="label1">Cuenta</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-toolbar>

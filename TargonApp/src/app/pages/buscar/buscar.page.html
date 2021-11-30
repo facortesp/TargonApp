@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar color="azul">
+    <ion-title color="blanco"slot="">Buscar</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button
+       defaultHref="/"
+       text="volver"
+       color="azul"
+       mode="ios"
+       class="back1"
+       color="blanco"> 
+      </ion-back-button>
+   </ion-buttons>
+  </ion-toolbar>
+  
+</ion-header>
+
+<ion-content color="celeste">
+  <ion-searchbar color="rosa"></ion-searchbar>
+
+</ion-content>
+<ion-toolbar >
+  <ion-tabs >
+    <ion-tab-bar color="azul"slot="bottom" >
+      <ion-tab-button tab="categorias" routerLink="/categorias">
+        <ion-icon name="list-outline"></ion-icon>
+        <ion-label class="label1">Categorias</ion-label>
+
+      </ion-tab-button>
+
+      <ion-tab-button tab="busqueda" routerLink="/buscar">
+        <ion-icon name="search-circle-outline"></ion-icon>
+        <ion-label class="label1">Buscar</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button tab="inicio" routerLink="/inicio">
+        <ion-icon name="home-outline"></ion-icon>
+        <ion-label class="label1">Inicio</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button tab="guardados" routerLink="/guardados">
+        <ion-icon name="bookmark-outline"></ion-icon>
+        <ion-label class="label1">Favoritos</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button tab="cuenta" routerLink="/cuenta">
+        <ion-icon name="person-circle-outline"></ion-icon>
+        <ion-label class="label1">Cuenta</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-toolbar>

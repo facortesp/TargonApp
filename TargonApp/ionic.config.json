@@ -1,0 +1,7 @@
+{
+  "name": "TargonApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
